@@ -1,5 +1,5 @@
 
-Grep: 
+**Grep:** 
 
 grep "81.143.211.90" access.log
 
@@ -35,7 +35,7 @@ touch <filename>. -> Create an empty file
 Switching between users on a Linux install is performed using command 'Su'
 
 
-Common Directories
+**Common Directories**
 
 **/etc**
 The etc folder (short for etcetera) is a commonplace location to store system files that are used by your operating system. 
@@ -54,7 +54,7 @@ The "/var" directory, with "var" being short for variable data. This folder stor
 
 This is a unique root directory found on a Linux install.
 
-General/Useful Utilities
+**General/Useful Utilities**
 
 **Downloading Files (Wget)**
 
@@ -105,3 +105,24 @@ We can do four options with `systemctl`:
 - Stop
 - Enable
 - Disable
+
+Maintaining Your System: Automation
+
+Crontab is one of the processes that is started during boot, which is responsible for facilitating and managing cron jobs.
+
+A crontab is simply a special file with formatting that is recognised by the `cron` process to execute each line step-by-step. Crontabs require 6 specific values:
+
+|   |   |
+|---|---|
+|Value|Description|
+|MIN|What minute to execute at|
+|HOUR|What hour to execute at|
+|DOM|What day of the month to execute at|
+|MON|What month of the year to execute at|
+|DOW|What day of the week to execute at|
+|CMD|The actual command that will be executed.|
+
+Let's use the example of backing up files. You may wish to backup "cmnatic"'s  "Documents" every 12 hours. We would use the following formatting:
+
+0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/
+
