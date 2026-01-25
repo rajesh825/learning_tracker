@@ -126,3 +126,43 @@ Let's use the example of backing up files. You may wish to backup "cmnatic"'s  
 
 0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/
 
+**Maintaining Your System: Package Management**
+
+**Managing Your Repositories (Adding and Removing)**
+
+Normally we use the apt command to install software onto our Ubuntu system. The `apt` command is a part of the package management software also named apt
+
+**GPG KEY**:
+When adding software, the integrity of what we download is guaranteed by the use of what is called GPG (Gnu Privacy Guard) keys. These keys are essentially a safety check from the developers saying, "here's our software". If the keys do not match up to what your system trusts and what the developers used, then the software will not be downloaded
+
+1. Let's download the GPG key and use apt-key to trust it
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+
+### What this means:
+
+- Software repositories are signed with **GPG keys**.
+    
+- Your system uses these keys to verify that the software you download is **authentic** and **not tampered with**.
+    
+- This command downloads Sublime Text’s public key and adds it to your system’s trusted keys.
+    
+
+### Why it matters:
+
+Without this key, your system would refuse to install Sublime Text because it cannot verify the source.
+
+Add Sublime Text’s repository to apt
+
+Linux stores repository information in:  /etc/apt/sources.list
+
+But best practice is to keep third‑party repos in: /etc/apt/sources.list.d/
+
+So you create a new file:sublime-text.list
+
+### Why this step exists:
+
+You’re telling apt:
+
+> “Hey, here’s another place where you can find software — the Sublime Text repository.”
+
+ 
