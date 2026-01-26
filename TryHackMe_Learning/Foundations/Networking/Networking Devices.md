@@ -6,4 +6,4 @@
 
 The OSI (Open Systems Interconnection) model is a conceptual model developed by the International Organization for Standardization (ISO) that describes how communications should occur in a computer network
 
- ![](Pasted%20image%2020260126215014.png)
+ ![](Pasted%20image%2020260126215258.png)
